@@ -11,7 +11,7 @@
         additivity开启的话，由于这个logger也是满足root的，所以会被打印两遍。
         不过root logger 的level是error，为什么Bar 里面的trace信息也被打印两遍呢
         -->
-        <logger name="cn.lsw.base.log4j2.Hello" level="trace" additivity="false">
+        <logger name="com.hw.pps.gadget" level="trace" additivity="false">
             <appender-ref ref="Console"/>
         </logger>
         <root level="debug">

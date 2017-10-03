@@ -26,10 +26,11 @@ import java.util.Map;
 public class Log4j2Context
 {
     // 使用线程本地变量存储日志信息
-    private static final ThreadLocal<Map<String, String>> LOCAL_MAP = new ThreadLocal<Map<String,String>>() 
+    private static final ThreadLocal<Map<String, String>> LOCAL_MAP = new ThreadLocal<Map<String, String>>() 
     {
         @Override
-        protected Map<String, String> initialValue() {
+        protected Map<String, String> initialValue() 
+        {
             return new HashMap<String, String>();
         }
         

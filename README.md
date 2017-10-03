@@ -10,4 +10,7 @@
         </Console>
     </appenders>
 ``` 
-* 提供可监控的容器、线程等资源集合
+* 提供资源监控的统一模型，比如Java集合类、定时任务执行情况等：
+你想监控Map对象的size并定时输出到日志文件中，你可以直接使用ControllableHashMap或者线程安全的ControllableConcurrentHashMap；
+监控结果的输出你可以选择默认的DefaultCollector（log4j2日志输出），或者实现自己的Collector。
+

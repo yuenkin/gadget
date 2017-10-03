@@ -1,6 +1,6 @@
 /*
  * 文件名：ControllableConcurrentMap.java
- * 版权：Copyright by www.huawei.com
+ * 版权：Copyright by www.yuenkin.com
  * 描述：
  * 修改人：Administrator
  * 修改时间：2017年10月3日

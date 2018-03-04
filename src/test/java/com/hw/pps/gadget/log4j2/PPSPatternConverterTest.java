@@ -11,17 +11,30 @@
 
 package com.hw.pps.gadget.log4j2;
 
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class PPSPatternConverterTest
 {
     public static Logger logger = LogManager.getLogger(PPSPatternConverterTest.class.getName());
-    public static void main(String[] args)
+    public static void main(String[] args) throws InterruptedException
     {
         Log4j2Context.set("key1", "32098888");
         Log4j2Context.set("key2", "hellowc");
         logger.debug("今天我不在家~");
+        
+        ExecutorService service = Executors.newFixedThreadPool(100);
+        for (int i = 0; i < 100; i ++)
+        {
+            service.submit(new LoggerTask(i));
+        }
+        
+        service.shutdown();
+        service.awaitTermination(Long.MAX_VALUE, TimeUnit.HOURS);
         
     }
 }
